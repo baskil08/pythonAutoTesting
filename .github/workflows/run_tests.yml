@@ -2,7 +2,7 @@ name: Run autotests
 
 
 on:
-  workflow_dispath:
+  workflow_dispatch:
     inputs:
       deployment_target:
         description: select tests to run
@@ -10,13 +10,13 @@ on:
         type: choice
         default: all
         options:
-          -all
+          - all
 
 jobs:
   run_tests:
-  runs-on: ubuntu-latest
-  name: Tests
-  steps:
+    runs-on: ubuntu-latest
+    name: Tests
+    steps:
     - name: Coppy source code
       uses: actions/checkout@v4
     - name: Set up Python env
